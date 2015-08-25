@@ -1,0 +1,15 @@
+<template xmlns="http://ws.apache.org/ns/synapse" name="addFiles">
+
+    <parameter name="filelocation"/>
+    <parameter name="addfilelocation"/>
+
+
+    <sequence>
+        <log level="full" category="debug">
+
+            <property name="filelocation" expression="$func:filelocation" />
+            <property name="addfilelocation" expression="$func:addfilelocation" />
+        </log>
+        <class name="org.wso2.carbon.connector.FileAdd" />
+    </sequence>
+</template>
